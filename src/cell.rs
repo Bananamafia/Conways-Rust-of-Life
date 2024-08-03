@@ -1,5 +1,6 @@
 use rand::Rng;
 
+#[derive(Clone, Copy)]
 pub struct Cell {
     alive: bool,
     living_neighbor_count: u8,
@@ -13,15 +14,15 @@ impl Cell {
         }
     }
 
-    pub fn to_string(&self) -> String {
+    pub fn to_string(&self) -> &str {
         if self.alive {
-            String::from("x")
+            "x"
         } else {
-            String::from(".")
+            " "
         }
     }
 
-    pub fn update_living_neighbor_count(&mut self, neighbors: Vec<&Cell>) {
+    pub fn update_living_neighbor_count(&mut self, neighbors: Vec<Cell>) {
         self.living_neighbor_count = neighbors.iter().filter(|cell| cell.alive).count() as u8
     }
 
@@ -33,4 +34,5 @@ impl Cell {
             4.. => self.alive = false,
         }
     }
+
 }
