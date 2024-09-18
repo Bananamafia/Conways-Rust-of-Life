@@ -16,9 +16,9 @@ impl Cell {
 
     pub fn to_string(&self) -> &str {
         if self.alive {
-            "x"
+            "██"
         } else {
-            " "
+            "  "
         }
     }
 

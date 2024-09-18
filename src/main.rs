@@ -6,8 +6,8 @@ use crate::cell::Cell;
 
 fn main() {
     let living_chance: f64 = 0.2;
-    let board_height: u16 = 20;
-    let board_width: u16 = 40;
+    let board_height: u16 = 60;
+    let board_width: u16 = 120;
 
     let mut cells: Vec<Vec<Cell>> = fill_board(living_chance, board_height, board_width);
 
